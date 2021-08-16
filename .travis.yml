@@ -118,3 +118,9 @@ script:
     ANSIBLE_FORCE_COLOR=1 ansible-playbook -i tests/inventory tests/tests_config_namespace.yml --connection=local --become -v
     && (echo 'Namespace test: pass' && exit 0)
     || (echo 'Namespace test: fail' && exit 1)
+
+  # Test 17: Verify configuration indentation
+  - >
+    ANSIBLE_FORCE_COLOR=1 ansible-playbook -i tests/inventory tests/tests_indent.yml --connection=local --become -v
+    && (echo 'Indent test: pass' && exit 0)
+    || (echo 'Indent test: fail' && exit 1)
